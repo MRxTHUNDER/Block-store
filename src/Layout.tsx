@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import App from './App';
@@ -14,7 +13,7 @@ function Layout(){
                 <Navbar />
                 <Routes>
                     <Route path="/" element={<App />} />
-                    <Route path="/products" element={<Products />} />
+                    <Route path="/products/:productId" element={<Products />} />
                     <Route path="/checkout" element={<Checkout />} />
                 </Routes>
             </div>
