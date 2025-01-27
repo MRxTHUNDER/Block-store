@@ -16,7 +16,7 @@ function Products() {
     };
 
     return (
-        <div className="min-h-screen bg-[#020817] text-white">
+        <div className="min-h-screen bg-[#020817] text-white p-10">
             {/*/!* Navigation *!/*/}
             {/*<nav className="container mx-auto px-6 py-4 flex items-center justify-between">*/}
             {/*    <div className="flex items-center space-x-8">*/}
@@ -39,11 +39,11 @@ function Products() {
                 <div className="grid grid-cols-2 gap-12">
                     {/* Product Images */}
                     <div className="space-y-4">
-                        <div className="bg-[#0f1729] p-8 rounded-xl">
+                        <div className="bg-[#0f1729] w-50 h-50 p-8 rounded-xl">
                             <img
                                 src="https://images.unsplash.com/photo-1589820296156-2454bb8a6ad1?auto=format&fit=crop&q=80&w=500"
                                 alt="GeodNet MobileCM"
-                                className="w-full rounded-lg"
+                                className="w-50 h-50 rounded-lg"
                             />
                         </div>
                         <div className="grid grid-cols-2 gap-4">
