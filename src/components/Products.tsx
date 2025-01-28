@@ -1,8 +1,88 @@
-import React, { useState } from 'react';
-import { Star, ChevronDown, Bitcoin, ArrowRight } from 'lucide-react';
+import  { useEffect, useState } from 'react';
+import { Star, ArrowRight } from 'lucide-react';
+import { useNavigate, useParams } from 'react-router-dom';
+import {productDetails as localProductDetails} from '../lib/productDetails'
+import { BACKEND_URL } from '../lib/config';
+
+
+// Define the type for the product details
+type ProductDetails = {
+    whatItDoes: string;
+    includedAndRecommended: string[];
+    howMuchCanYouEarn: string;
+    installationProcess: string;
+    images: string[];
+    earnImage:string;
+};
+
+// Define the structure of `localProductDetails`
+type ProductDetailsMap = {
+    [key: string]: ProductDetails; // Indexable by string keys
+};
+
 
 function Products() {
     const [quantity, setQuantity] = useState(1);
+    const navigate = useNavigate();
+    const [productid,setproductid] = useState<string|undefined>(undefined);
+    const [product, setProduct] = useState({
+        name: "",
+        description: "",
+        price: "",
+    });
+
+    const [localProduct, setLocalProduct] = useState<ProductDetails | null>(null);
+
+    
+
+    const { productId } = useParams(); 
+    useEffect(() => {
+        if (productId) {
+            setproductid(productId);
+        }
+    }, [productId]);
+
+    useEffect(() => {
+        if(!productId){
+            alert("No product id on params")
+            return
+        }
+        // Fetch product details when the page loads
+        const fetchProduct = async () => {
+            try {
+                const response = await fetch(`${BACKEND_URL}/api/product/fetch/${productId}`);
+                const data = await response.json();
+
+                if (response.ok) {
+                    setProduct(data.product); // Set product details
+                } else {
+                    console.error("Error fetching product:", data.message);
+                }
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            } catch (error:any) {
+                console.error("Error fetching product:", error.message);
+            }
+        };
+
+        const fetchLocalProductDetails = () => {
+            try {
+                // Use the imported `productDetails` object
+                const productData = localProductDetails as ProductDetailsMap; 
+                const productInfo = productData[productId]; // Cast productId to string
+                if (productInfo) {
+                    setLocalProduct(productInfo);
+                } else {
+                    console.error("Product not found in local data");
+                }
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            } catch (error:any) {
+                console.error("Error fetching product details:", error.message);
+            }
+        };
+
+        fetchLocalProductDetails()
+        fetchProduct();
+    }, [productId]);
 
     const renderStars = (rating: number) => {
         return [...Array(5)].map((_, index) => (
@@ -15,49 +95,53 @@ function Products() {
         ));
     };
 
-    return (
-        <div className="min-h-screen bg-[#020817] text-white p-10">
-            {/*/!* Navigation *!/*/}
-            {/*<nav className="container mx-auto px-6 py-4 flex items-center justify-between">*/}
-            {/*    <div className="flex items-center space-x-8">*/}
-            {/*        <h1 className="text-xl font-bold">Block Store</h1>*/}
-            {/*        <div className="space-x-6">*/}
-            {/*            <a href="#" className="hover:text-blue-500">Home</a>*/}
-            {/*            <a href="#" className="hover:text-blue-500">Services</a>*/}
-            {/*            <a href="#" className="hover:text-blue-500">Our Project</a>*/}
-            {/*            <a href="#" className="hover:text-blue-500">About us</a>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*    <button className="bg-blue-600 px-4 py-2 rounded-lg hover:bg-blue-700">*/}
-            {/*        Contact us*/}
-            {/*    </button>*/}
-            {/*</nav>*/}
+    
 
+
+    function CheckOutSave () {
+        try {
+            if(!productid){
+                return
+            }
+            localStorage.setItem('productName',product.name);
+            localStorage.setItem('productPrice',product.price);
+            localStorage.setItem('quantity',quantity.toString());
+            localStorage.setItem('productId',productid ||"");
+
+            navigate('/checkout')
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } catch (error:any) {
+            console.log(error.message)
+        }
+    }
+
+    return (
+        <div className="min-h-screen bg-[#020817] text-white">
             {/* Main Content */}
             <main className="container mx-auto px-6 py-8">
                 {/* Product Section */}
                 <div className="grid grid-cols-2 gap-12">
                     {/* Product Images */}
-                    <div className="space-y-4">
-                        <div className="bg-[#0f1729] w-50 h-50 p-8 rounded-xl">
+                    <div className="space-y-4 mt-6">
+                        <div className="bg-[#0f1729] p-8 rounded-xl">
                             <img
-                                src="https://images.unsplash.com/photo-1589820296156-2454bb8a6ad1?auto=format&fit=crop&q=80&w=500"
-                                alt="GeodNet MobileCM"
-                                className="w-50 h-50 rounded-lg"
+                                src={`${localProduct?.images[0]}`}
+                                alt={`${product.name} image1`}
+                                className="w-full rounded-lg"
                             />
                         </div>
                         <div className="grid grid-cols-2 gap-4">
                             <div className="bg-[#0f1729] p-4 rounded-xl">
                                 <img
-                                    src="https://images.unsplash.com/photo-1589820296156-2454bb8a6ad1?auto=format&fit=crop&q=80&w=200"
-                                    alt="GeodNet MobileCM Thumbnail 1"
+                                    src={`${localProduct?.images[1]}`}
+                                    alt={`${product.name} image2`}
                                     className="w-full rounded-lg"
                                 />
                             </div>
                             <div className="bg-[#0f1729] p-4 rounded-xl">
                                 <img
-                                    src="https://images.unsplash.com/photo-1589820296156-2454bb8a6ad1?auto=format&fit=crop&q=80&w=200"
-                                    alt="GeodNet MobileCM Thumbnail 2"
+                                    src={`${localProduct?.images[2]}`}
+                                    alt={`${product.name} image3`}
                                     className="w-full rounded-lg"
                                 />
                             </div>
@@ -66,9 +150,9 @@ function Products() {
 
                     {/* Product Info */}
                     <div className="space-y-6">
-                        <h2 className="text-3xl font-bold">GeodNet MobileCM (Triple-band)</h2>
+                        <h2 className="mt-12 text-3xl font-bold">{product.name}</h2>
                         <div className="space-y-2">
-                            <p className="text-2xl font-bold">Rs. 69,999</p>
+                            <p className="text-2xl font-bold">Rs. {product.price}</p>
                             <p className="text-gray-400">Free shipping on all orders</p>
                         </div>
                         <div className="flex items-center space-x-2">
@@ -88,18 +172,11 @@ function Products() {
                                     ))}
                                 </select>
                             </div>
-                            <div>
-                                <button className="w-full bg-[#0f1729] border border-gray-700 rounded-lg px-4 py-2 flex items-center justify-between">
-                                    <span>Select Add-ons</span>
-                                    <ChevronDown className="w-5 h-5" />
-                                </button>
-                            </div>
+        
                         </div>
                         <div className="space-y-3">
-                            <button className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700">
-                                Add to Cart
-                            </button>
-                            <button className="w-full bg-[#0f1729] border border-gray-700 text-white py-3 rounded-lg hover:bg-gray-800">
+                            <button className="w-full bg-[#0f1729] border border-gray-700 text-white py-3 rounded-lg hover:bg-gray-800"
+                            onClick={CheckOutSave}>
                                 Go to Checkout
                             </button>
                         </div>
@@ -113,18 +190,15 @@ function Products() {
                         <div>
                             <h4 className="text-lg font-semibold mb-2">What it does?</h4>
                             <p className="text-gray-400">
-                                The GEODNET mission is to gather dense real-time geospatial data from our Earth and her Atmospheres
-                                using a vast network of roof-mounted Space Weather stations. You will earn GEOD tokens for installing this.
+                              {localProduct?.whatItDoes}
                             </p>
                         </div>
                         <div>
                             <h4 className="text-lg font-semibold mb-2">What's included & recommended parts:</h4>
                             <ul className="text-gray-400 list-disc list-inside space-y-1">
-                                <li>MobileCM Triple-Band 4 Constellation GNSS Receiver</li>
-                                <li>Survey Grade Triple-Band Roof Antenna</li>
-                                <li>POE Antenna Cable</li>
-                                <li>Mounting Hardware</li>
-                                <li>Mounting Pole ID-bits and Brackets Included</li>
+                            {localProduct?.includedAndRecommended.map((item, index) => (
+                                    <li key={index}>{item}</li>
+                                ))}
                             </ul>
                         </div>
                     </div>
@@ -135,11 +209,7 @@ function Products() {
                     <div className="space-y-4">
                         <h3 className="text-2xl font-bold">How Much Can You Earn?</h3>
                         <p className="text-gray-400">
-                            Position your GEODNET miners with clear line of sight and no
-                            obstructions with a 5-degree line of sight. You want to ensure that
-                            you are the first one in your hex. If you do not you cannot be
-                            granted a Location NFT. This proves you're effectively contributing
-                            to our network.
+                         {localProduct?.howMuchCanYouEarn}
                         </p>
                         <button className="flex items-center space-x-2 text-blue-500 hover:text-blue-400">
                             <span>Explore Mining Rewards</span>
@@ -147,8 +217,8 @@ function Products() {
                         </button>
                     </div>
                     <div className="flex justify-center items-center">
-                        <div className="bg-blue-500 rounded-full p-8">
-                            <Bitcoin className="w-16 h-16" />
+                        <div className="bg-transparent rounded-full p-8">
+                            <img src={`${localProduct?.earnImage}`}></img>
                         </div>
                     </div>
                 </section>
@@ -162,9 +232,7 @@ function Products() {
                         </div>
                         <div className="space-y-4">
                             <p className="text-gray-400">
-                                Position your GEODNET miners with clear line of sight and no
-                                obstructions with a 5-degree line of sight. You want to ensure that
-                                you are the first one in your hex.
+                              {localProduct?.installationProcess}
                             </p>
                             <button className="flex items-center space-x-2 text-blue-500 hover:text-blue-400">
                                 <span>See the Installation Guide</span>
