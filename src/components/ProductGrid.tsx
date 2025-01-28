@@ -3,26 +3,28 @@ import image1 from '../../assets/goednet.png';
 import image2 from '../../assets/weatherxm.png';
 import image3 from '../../assets/windbits.webp';
 import image4 from '../../assets/geopulse.png';
+import { useNavigate } from 'react-router-dom';
 
 
 //import { Radio, Satellite, Database, HardDrive, Cpu } from 'lucide-react';
 
 const products = [
-  { image: image1, name: 'GeochNet' },
-  { image: image2, name: 'Weatherxm' },
-  { image: image3, name: 'Wingbits' },
-  { image: image4, name: 'Geo Pulse' },
+  { image: image1, name: 'GeochNet',routing:"/products/1" },
+  { image: image2, name: 'Weatherxm', routing:"/products/3" },
+  { image: image3, name: 'Wingbits', routing:"/products/2" },
+  { image: image4, name: 'Geo Pulse', routing:"/products/4" },
   // Duplicate products for seamless loop
-  { image: image1, name: 'GeochNet' },
-  { image: image2, name: 'Weatherxm' },
-  { image: image3, name: 'Wingbits' },
-  { image: image4, name: 'Geo Pulse' },
+  { image: image1, name: 'GeochNet',routing:"/products/1" },
+  { image: image2, name: 'Weatherxm', routing:"/products/3" },
+  { image: image3, name: 'Wingbits', routing:"/products/2" },
+  { image: image4, name: 'Geo Pulse', routing:"/products/4" },
 
 ];
 
 const ProductGrid = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const container = containerRef.current;
@@ -80,7 +82,9 @@ const ProductGrid = () => {
                 className="flex-none w-80 h-60 flex flex-col items-center p-6 bg-gradient-to-br from-[#0f172a] to-blue-900 rounded-xl hover:bg-gray-800/70 transition-all cursor-pointer"
                 style={{scrollSnapAlign: 'start'}}
             >
-              <div className="mb-3">
+              <div className="mb-3" onClick={()=>{
+                  navigate(product.routing)
+              }}>
                 <img src={product.image} alt={product.name} className="w-40 h-40 object-contain"/>
               </div>
               <span className="text-gray-300 font-bold">{product.name}</span>
