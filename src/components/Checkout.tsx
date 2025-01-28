@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { BACKEND_URL } from "../lib/config";
+import { useNavigate } from "react-router-dom";
 
 function Checkout() {
   const [formData, setFormData] = useState({
@@ -15,6 +16,9 @@ function Checkout() {
     zipCode: "",
     country: "",
   });
+
+  const navigate = useNavigate();
+
   const [productName, setProductName] = useState<string | undefined>();
   const [price, setPrice] = useState<string | undefined>();
   const [quantity, setQuantity] = useState<string | undefined>();
@@ -23,6 +27,7 @@ function Checkout() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [discount,setDiscount] = useState<string>('0');
 
   useEffect(() => {
     const name = localStorage.getItem("productName");
@@ -45,8 +50,7 @@ function Checkout() {
 
   const calculateTotal = () => {
     const subtotal = parseFloat(price || "0") * parseInt(quantity || "0", 10);
-    const discount = subtotal * 0.2; // 20% discount
-    return (subtotal - discount).toFixed(2); // Total after discount
+    return (subtotal - Number(discount)).toFixed(2); // Total after discount
   };
 
   const handlePlaceOrder = async () => {
@@ -61,7 +65,8 @@ function Checkout() {
       productId: productId || "",
       quantity: quantity || "1",
       coupan,
-      discount: "0", // Default discount
+      discount: discount, // Default discount as string
+       // Default discount
       deliveryFee: "Free", // Default delivery fee
       subTotal: (
         parseFloat(price || "0") * parseInt(quantity || "0", 10)
@@ -100,6 +105,10 @@ function Checkout() {
       console.error(err);
     } finally {
       setLoading(false);
+      setTimeout(()=>{
+      alert("Our Executive will contact you soon");
+      navigate('/')
+      },2000)
     }
   };
 
@@ -236,7 +245,7 @@ function Checkout() {
             <div className="space-y-4 mb-6">
               <div className="flex justify-between text-gray-300">
                 <span>
-                  {productName} {quantity} × 1
+                  {productName}  ×  {quantity}
                 </span>
                 <span>Rs. {price}</span>
               </div>
@@ -251,6 +260,11 @@ function Checkout() {
                 name="coupan"
                 onChange={(e) => {
                   setCoupan(e.target.value);
+                  if(e.target.value==='FIRSTORDER'){
+                    setDiscount('100')
+                  } else {
+                    setDiscount('0')
+                  }
                 }}
               ></input>
             </div>
@@ -260,10 +274,15 @@ function Checkout() {
                 <span>Subtotal</span>
                 <span>Rs. {parseFloat(price || "0") * parseInt(quantity || "0", 10)}</span>
               </div>
+              {
+                discount !== '0'?
               <div className="flex justify-between">
-                <span className="text-gray-300">Discount (-20%)</span>
-                <span className="text-blue-500">-Rs. {(parseFloat(price || '0') * parseInt(quantity || '0', 10) * 0.2).toFixed(2)}</span>
+                <span className="text-gray-300">Discount (- 100)</span>
+                <span className="text-blue-500">-Rs. {discount}</span>
               </div>
+              :
+              null
+}
               <div className="flex justify-between text-gray-300">
                 <span>Delivery Fee</span>
                 <span>Free</span>
