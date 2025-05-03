@@ -1,17 +1,19 @@
-import React from 'react';
-import { Store, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import logo from "../../assets/block_store_wm.png";
+
 
 const Footer = () => {
     return (
         <footer className="bg-gray-900 py-16">
+
             <div className="max-w-7xl mx-auto px-8">
                 <div className="grid grid-cols-5 gap-8 mb-12">
                     <div>
                         <div className="flex items-center gap-2 mb-4">
-                            <Store className="text-blue-500" size={24} />
-                            <span className="text-white font-bold text-xl">Block Store</span>
+                            <img src={logo} alt="Block Store Logo" className="h-10 w-auto"/>
                         </div>
                         <div className="flex gap-4">
+
                             <Facebook className="text-gray-400 hover:text-white cursor-pointer" size={20} />
                             <Twitter className="text-gray-400 hover:text-white cursor-pointer" size={20} />
                             <Instagram className="text-gray-400 hover:text-white cursor-pointer" size={20} />

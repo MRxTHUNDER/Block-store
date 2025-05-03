@@ -1,5 +1,7 @@
 export const productDetails = {
     "1": {
+      "name": "Geodnet MobileCM (Triple-band)",
+      "price": "69,999",
       "whatItDoes": "The GEODNET mission is to gather dense real-time geospatial data from the Earth and her Atmosphere using a new class of roof-mounted Space Weather stations.‍ You will earn GEOD tokens for installing this.‍",
       "includedAndRecommended": [
         "MobileCM Triple-Band 4 Constellation GNSS Receiver",
@@ -16,7 +18,31 @@ export const productDetails = {
         "https://heliumdeploy.com/cdn/shop/files/geodnet.png?v=1716227142&width=990",
         "https://heliumdeploy.com/cdn/shop/files/Survey_Grade_Triple-Band_Roof_Antennae-removebg.png?v=1721848099&width=990",
         "https://heliumdeploy.com/cdn/shop/files/hyfix-removebg.png?v=1721848099&width=990"
-      ]
+      ],
+      "reviews": [
+        {
+          "name": "Sahil",
+          "rating": 5,
+          "review": "Goednet stands out with its superior connectivity and user-friendly setup. The consistent performance and sleek design make it a must-have for anyone looking to enhance their network experience.",
+        },
+        {
+          "name": "Gaurav",
+          "rating": 4,
+          "review": "Best purchase! Goednet device lagane ke baad mera office ka kaam bina kisi rukawat ke chal raha hai. Video calls aur downloads dono super fast hain. Highly satisfied!",
+        },
+        {
+          "name": "Tarun",
+          "rating": 4,
+          "review": "Great Device with Minor Improvements Needed",
+        },
+        {
+          "name": "Suraj",
+          "rating": 4,
+          "review": "Excellent Performance and Easy Setup!",
+        },
+
+
+      ],
     },
     "2": {
       "whatItDoes": "‍This device tracks aircrafts and satellites. Get rewarded with Wingbits and Geodnet tokens for installing this device.",
@@ -34,7 +60,31 @@ export const productDetails = {
         "https://heliumdeploy.com/cdn/shop/files/3d23d23.webp?v=1728574250&width=1346",
         "https://heliumdeploy.com/cdn/shop/files/123123.webp?v=1728574307&width=1346",
         "https://heliumdeploy.com/cdn/shop/files/67567.webp?v=1728574355&width=1346"
-      ]
+      ],
+      "reviews": [
+        {
+          "name": "Saurav",
+          "rating": 5,
+          "review": "The WingBits mining device exceeded my expectations! Setup was super easy, and within minutes, it was up and running smoothly. The hash rate is impressive, and it runs quieter than other miners I've used.",
+        },
+        {
+          "name": "Harshit",
+          "rating": 4,
+          "review": "The WingBits miner is a solid mid-range device. It’s easy to install, runs relatively quietly, and gives decent mining returns.",
+        },
+        {
+          "name": "Mukesh",
+          "rating": 5,
+          "review": "The build quality feels sturdy, and the software interface is user-friendly.",
+        },
+        {
+          "name": "Robin",
+          "rating": 4,
+          "review": " I’ve been getting consistent returns since day one. Definitely worth the investment!",
+        },
+
+
+      ],
     },
     "3": {
       "whatItDoes": "‍The WB1200 bundles product the WS1001 weather station with our open source WXM D1 WiFi gateway. This unit monitors the environment. Providing hyper local weather data. You will be rewarded in WXM tokens for installing this.",
@@ -52,7 +102,31 @@ export const productDetails = {
         "https://heliumdeploy.com/cdn/shop/files/WB1200_WeatherXM.png?v=1737860004&width=1346",
         "https://heliumdeploy.com/cdn/shop/files/WeatherXMAccessory.png?v=1724176622&width=1346",
         "https://heliumdeploy.com/cdn/shop/files/WeatherXMParts.png?v=1724176636&width=1346"
-      ]
+      ],
+      "reviews": [
+        {
+          "name": "Harsh",
+          "rating": 5,
+          "review": "I’ve been using the WeatherXM mining device for a couple of months now, and it’s exceeded my expectations. The setup was straightforward, and the data collection is incredibly accurate.",
+        },
+        {
+          "name": "Harshita",
+          "rating": 4,
+          "review": "The device runs smoothly with minimal maintenance required, and the build quality feels solid.",
+        },
+        {
+          "name": "Himanshu",
+          "rating": 5,
+          "review": "Highly recommend it to anyone interested in weather data and passive income!",
+        },
+        {
+          "name": "Fahad",
+          "rating": 4,
+          "review": " The WeatherXM mining device is a great piece of tech. It delivers precise weather data and rewards consistently.",
+        },
+
+
+      ],
     },
     "4": {
       "whatItDoes": "‍The Geo-Pulse device offers 10x greater accuracy than GPS, helping users pinpoint their exact location. It enables participation in Token Quests, where GEO-PULSE drivers earn $GEOD and other crypto rewards for completing navigation tasks that improve network accuracy by mapping GEODNET RTK coverage and providing data for positioning engine development.",
@@ -67,7 +141,31 @@ export const productDetails = {
         "https://heliumdeploy.com/cdn/shop/files/geopulse__1.png?v=1732053089&width=1346",
         "https://heliumdeploy.com/cdn/shop/files/dsc00043__1___1.jpg?v=1732053089&width=1346",
         "https://heliumdeploy.com/cdn/shop/files/gp_01.webp?v=1732053186&width=1346"
-      ]
+      ],
+      "reviews": [
+        {
+          "name": "Anurag",
+          "rating": 5,
+          "review": "I've been using the Geo Pulse Mining Device for a few months now, and it's hands down the most accurate detector I've owned.",
+        },
+        {
+          "name": "Rudra",
+          "rating": 4,
+          "review": "The battery life is impressive, lasting me through long days of prospecting. Highly recommend it for serious miners!",
+        },
+        {
+          "name": "Harman",
+          "rating": 5,
+          "review": "It’s lightweight, easy to carry, and the build quality feels durable. ",
+        },
+        {
+          "name": "Vivek",
+          "rating": 4,
+          "review": "The precision is unmatched",
+        },
+
+
+      ],
     }
   }
   

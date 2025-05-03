@@ -31,7 +31,7 @@ function Checkout() {
 
   useEffect(() => {
     const name = localStorage.getItem("productName");
-    consgit t price = localStorage.getItem("productPrice");
+    const price = localStorage.getItem("productPrice");
     const quantity = localStorage.getItem("quantity");
     const productId = localStorage.getItem("productId");
 
