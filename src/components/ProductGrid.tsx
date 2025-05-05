@@ -3,17 +3,23 @@ import image1 from "../../assets/goednet.png";
 import image2 from "../../assets/WB1200_WeatherXM.webp";
 import image3 from "../../assets/windbits.webp";
 import image4 from "../../assets/geo.webp";
+import image5 from "../../assets/rovrrr.webp";
+import image6 from "../../assets/rovr.webp";
 import { useNavigate } from "react-router-dom";
 
 const products = [
-  { image: image1, name: "GeochNet", routing: "/products/1" },
+  { image: image1, name: "Geodnet", routing: "/products/1" },
   { image: image2, name: "Weatherxm", routing: "/products/3" },
   { image: image3, name: "Wingbits", routing: "/products/2" },
   { image: image4, name: "Geo Pulse", routing: "/products/4" },
-  { image: image1, name: "GeochNet", routing: "/products/1" },
+  { image: image5, name: "Rover Lightcone Max", routing: "/products/5" },
+  { image: image6, name: "Rover TarantulaX", routing: "/products/6" },
+  { image: image1, name: "Geodnet", routing: "/products/1" },
   { image: image2, name: "Weatherxm", routing: "/products/3" },
   { image: image3, name: "Wingbits", routing: "/products/2" },
   { image: image4, name: "Geo Pulse", routing: "/products/4" },
+  { image: image5, name: "Rover", routing: "/products/5" },
+  { image: image6, name: "Rover TarantulaX", routing: "/products/6" },
 ];
 
 const ProductGrid = () => {

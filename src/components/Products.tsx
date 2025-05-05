@@ -16,7 +16,7 @@ type ProductDetails = {
     whatItDoes: string;
     includedAndRecommended: string[];
     howMuchCanYouEarn: string;
-    installationProcess: string;
+    installationProcess: string[];
     images: string[];
     earnImage: string;
     reviews: Review[];
@@ -151,9 +151,9 @@ function Products() {
                     <div>
                         <h3 className="text-2xl font-bold">How Much Can You Earn?</h3>
                         <p className="text-gray-400">{localProduct?.howMuchCanYouEarn}</p>
-                        <button className="text-blue-500 hover:text-blue-400 flex items-center">
-                            Explore Mining Rewards <ArrowRight className="w-4 h-4 ml-2" />
-                        </button>
+                        {/*<button className="text-blue-500 hover:text-blue-400 flex items-center">*/}
+                        {/*    Explore Mining Rewards <ArrowRight className="w-4 h-4 ml-2" />*/}
+                        {/*</button>*/}
                     </div>
                     <div className="flex justify-center">
                         <img src={localProduct?.earnImage} alt="Earning Potential" className="rounded-lg w-72 sm:w-96" />
@@ -163,7 +163,9 @@ function Products() {
                 {/* Installation Guide */}
                 <section className="mt-12">
                     <h3 className="text-2xl font-bold mb-4">Installation Process</h3>
-                    <p className="text-gray-400">{localProduct?.installationProcess}</p>
+                    <p className="text-gray-400">{localProduct?.installationProcess.map((item, index) => (
+                        <li key={index}>{item}</li>
+                    ))}</p>
                 </section>
 
                 {/* Product Reviews */}

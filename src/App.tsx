@@ -8,6 +8,7 @@ import Testimonials from './components/Testimonials';
 import {WorldMapDemo} from "./components/worldMap.tsx";
 import {HeroDemo} from "./components/miningHero.tsx";
 import {FeatureStepsDemo} from "./components/newFeaturedProducts.tsx";
+import LatestProducts from "./components/LatestProducts.tsx";
 
 //import Footer from './components/Footer';
 //import styles from "./style.tsx";
@@ -20,6 +21,7 @@ function App() {
             <Hero/>
             <HeroDemo/>
             <ProductGrid/>
+            <LatestProducts/>
             <WorldMapDemo />
             <Partners/>
             <TopDePins/>
