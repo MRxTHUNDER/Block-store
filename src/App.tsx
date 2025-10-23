@@ -3,10 +3,10 @@ import Hero from './components/Hero';
 import ProductGrid from './components/ProductGrid';
 import Partners from './components/Partners';
 import TopDePins from './components/TopDePins';
-import FeaturedProducts from './components/FeaturedProducts';
+//import FeaturedProducts from './components/FeaturedProducts';
 import Testimonials from './components/Testimonials';
 import {WorldMapDemo} from "./components/worldMap.tsx";
-import {HeroDemo} from "./components/miningHero.tsx";
+//import {HeroDemo} from "./components/miningHero.tsx";
 import {FeatureStepsDemo} from "./components/newFeaturedProducts.tsx";
 import LatestProducts from "./components/LatestProducts.tsx";
 
@@ -19,7 +19,7 @@ function App() {
         <div className="min-h-screen">
             {/*<Navbar/>*/}
             <Hero/>
-            <HeroDemo/>
+            {/*<HeroDemo/>*/}
             <ProductGrid/>
             <LatestProducts/>
             <WorldMapDemo />

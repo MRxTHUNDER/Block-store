@@ -8,7 +8,7 @@ const latestProducts = [
         route: '6',
         name: 'TarantulaX',
         description: 'TarantulaX is an enhanced RTK receiver that, through hardware encryption design, IMU fusion algorithms, and integration with the new generation of ROVR\'s hand-eye calibration model',
-        price: 149.99,
+        price: '20,999',
         image: 'https://rovr.network/images/product-1.png',
         features: [
             'Dual-band GNSS (L1/L5)',
@@ -25,7 +25,7 @@ const latestProducts = [
         route: '5',
         name: 'LightCone',
         description: 'The Lightcone Max is still in protype and is expected to launch next year. It uses advanced lidar and navigation to collect 3D data, earning ROVR tokens through automatic uploads.',
-        price: 4299.99,
+        price: 'TBD',
         image: 'https://rovr.network/images/product-2.jpg',
         features: [
             'Lidar Detection Range: 200m (180m @ 10% NIST)',
@@ -98,7 +98,7 @@ const LatestProducts: React.FC = () => {
                                 </ul>
 
                                 <div className="flex justify-between items-center">
-                                    <span className="text-xl font-bold text-blue-800">${product.price.toFixed(2)}</span>
+                                    <span className="text-xl font-bold text-blue-800">₹{product.price}</span>
 
                                     <button
                                         onClick={() => navigate(`/products/${product.route}`)}

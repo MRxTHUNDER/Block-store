@@ -7,6 +7,7 @@ import Footer from "./components/Footer.tsx";
 import About from "./components/about.tsx";
 import Contact from "./components/contact.tsx";
 import {ComingSoon} from "./components/ComingSoon.tsx";
+import ProductsGrid from "./components/ProductsGrid.tsx";
 
 function Layout(){
     return (
@@ -18,6 +19,7 @@ function Layout(){
                     <Route path="/products/:productId" element={<Products />} />
                     <Route path="/checkout" element={<Checkout />} />
                     <Route path="/about" element={<About/>} />
+                    <Route path="/products" element={<ProductsGrid/>} />
                     <Route path="/contact" element={<Contact/>} />
                     <Route path="/coming-soon" element={<ComingSoon
                         title="Exciting Feature Coming Soon"

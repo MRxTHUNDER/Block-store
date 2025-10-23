@@ -12,14 +12,14 @@ const products = [
   { image: image2, name: "Weatherxm", routing: "/products/3" },
   { image: image3, name: "Wingbits", routing: "/products/2" },
   { image: image4, name: "Geo Pulse", routing: "/products/4" },
-  { image: image5, name: "Rover Lightcone Max", routing: "/products/5" },
-  { image: image6, name: "Rover TarantulaX", routing: "/products/6" },
+  { image: image5, name: "Rovr Lightcone Max", routing: "/products/5" },
+  { image: image6, name: "Rovr TarantulaX", routing: "/products/6" },
   { image: image1, name: "Geodnet", routing: "/products/1" },
   { image: image2, name: "Weatherxm", routing: "/products/3" },
   { image: image3, name: "Wingbits", routing: "/products/2" },
   { image: image4, name: "Geo Pulse", routing: "/products/4" },
-  { image: image5, name: "Rover", routing: "/products/5" },
-  { image: image6, name: "Rover TarantulaX", routing: "/products/6" },
+  { image: image5, name: "Rovr Lightcone Max", routing: "/products/5" },
+  { image: image6, name: "Rovr TarantulaX", routing: "/products/6" },
 ];
 
 const ProductGrid = () => {

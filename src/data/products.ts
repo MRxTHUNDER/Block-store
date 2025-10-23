@@ -1,0 +1,121 @@
+import { Product } from '../lib/product';
+
+export const products: Product[] = [
+    {
+        id: 1,
+        name: "Geodnet MobileCM (Triple-band)",
+        description: "The GEODNET mission is to gather dense real-time geospatial data from the Earth and her Atmosphere using a new class of roof-mounted Space Weather stations.‍ You will earn GEOD tokens for installing this.‍",
+        price: "69,999",
+        //originalPrice: ,
+        discount: 0,
+        image: "https://heliumdeploy.com/cdn/shop/files/geodnet.png?v=1716227142&width=990",
+        category: "Geodnet",
+        rating: 4.8,
+        inStock: true,
+        url: "#/products/1"
+    },
+    {
+        id: 2,
+        name: "WXM D1 WIFI Weather Station WB1200",
+        description: "This device tracks aircrafts and satellites. Get rewarded with Wingbits and Geodnet tokens for installing this device",
+        price: "51,999",
+        //originalPrice: 1499.99,
+        discount: 0,
+        image: "https://heliumdeploy.com/cdn/shop/files/WB1200_WeatherXM.png?v=1737860004&width=1346",
+        category: "WeatherXM",
+        rating: 4.9,
+        inStock: true,
+        url: "#/products/3"
+    },
+    {
+        id: 3,
+        name: "MGW310 Multi-Platform Station - GEODNET & Wingbits Compatible",
+        description: "Track your health metrics, workouts, and notifications with our waterproof, feature-packed smart fitness watch with 7-day battery life.",
+        price: "132,450",
+        //originalPrice: 179.99,
+        discount: 0,
+        image: "https://heliumdeploy.com/cdn/shop/files/3d23d23.webp?v=1728574250&width=1346",
+        category: "Wingbits",
+        rating: 4.7,
+        inStock: true,
+        url: "#/products/2"
+    },
+    {
+        id: 4,
+        name: "Geo Pulse",
+        description: "The Geo-Pulse device offers 10x greater accuracy than GPS, helping users pinpoint their exact location.",
+        price: "20,999",
+        //originalPrice: ,
+        discount: 0,
+        image: "https://heliumdeploy.com/cdn/shop/files/geo.webp?v=1732051636&width=1346",
+        category: "Geodnet",
+        rating: 4.8,
+        inStock: true,
+        url: "#/products/4"
+    },
+    {
+        id: 5,
+        name: "Rovr Lightcone Max",
+        description: "The Lightcone Max uses advanced lidar and navigation to collect 3D data, earning ROVR tokens through automatic uploads. Users control it via smartphones, but the device works independently.",
+        price: "TBD",
+        //originalPrice: 1299.99,
+        discount: 0,
+        image: "https://rovr.network/images/product-2.jpg",
+        category: "Rovr",
+        rating: 4.9,
+        inStock: true,
+        url: "#/products/5"
+    },
+    {
+        id: 6,
+        name: "Rovr TarantulaX",
+        description: "TarantulaX is an enhanced RTK receiver that, through hardware encryption design, IMU fusion algorithms, and integration with the new generation of ROVR's hand-eye calibration model, can easily boost the user's phone accuracy to 2 cm.",
+        price: "20,999",
+        //originalPrice: 1299.99,
+        discount: 0,
+        image: "https://rovr.network/images/product-1.png",
+        category: "Rovr",
+        rating: 4.9,
+        inStock: true,
+        url: "#/products/6"
+    },
+    // {
+    //     id: 6,
+    //     name: "Portable Bluetooth Speaker",
+    //     description: "Take your music anywhere with this waterproof, 24-hour battery life portable speaker with rich, room-filling sound.",
+    //     price: 89.99,
+    //     originalPrice: 119.99,
+    //     discount: 25,
+    //     image: "https://images.pexels.com/photos/1706694/pexels-photo-1706694.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    //     category: "Audio",
+    //     rating: 4.5,
+    //     inStock: true,
+    //     url: "/products/portable-bluetooth-speaker"
+    // },
+    // {
+    //     id: 7,
+    //     name: "Smart Home Hub",
+    //     description: "Control your entire smart home ecosystem with our intuitive hub featuring voice control, automation, and seamless integration.",
+    //     price: 129.99,
+    //     originalPrice: 149.99,
+    //     discount: 13,
+    //     image: "https://images.pexels.com/photos/4219530/pexels-photo-4219530.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    //     category: "Smart Home",
+    //     rating: 4.4,
+    //     inStock: true,
+    //     url: "/products/smart-home-hub"
+    // },
+    // {
+    //     id: 8,
+    //     name: "Gaming Console Pro",
+    //     description: "Experience next-gen gaming with 4K graphics, 120fps gameplay, and an extensive library of exclusive titles.",
+    //     price: 499.99,
+    //     originalPrice: 499.99,
+    //     discount: 0,
+    //     image: "https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    //     category: "Gaming",
+    //     rating: 4.9,
+    //     inStock: false,
+    //     url: "/products/gaming-console-pro"
+    // }
+];

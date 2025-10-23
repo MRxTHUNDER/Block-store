@@ -5,7 +5,7 @@ function Contact() {
     const [selectedSubject, setSelectedSubject] = useState('General Inquiry');
 
     return (
-        <div className="p-10 min-h-screen bg-[#0f172a] py-16 px-4 sm:px-6 lg:px-8">
+        <div className="p-10 min-h-screen bg-gray-800 py-16 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto ">
                 <h1 className="text-4xl font-bold text-center text-white mb-4 pt-10">Contact Us</h1>
                 <p className="text-center text-white mb-12">
@@ -22,23 +22,23 @@ function Contact() {
                             <div className="space-y-6">
                                 <div className="flex items-center">
                                     <Phone className="w-5 h-5 mr-4" />
-                                    <span>+1012 3456 789</span>
+                                    <span>+91 8925899160</span>
                                 </div>
                                 <div className="flex items-center">
                                     <Mail className="w-5 h-5 mr-4" />
-                                    <span>demo@gmail.com</span>
+                                    <span>contact@blockstore.in</span>
                                 </div>
                                 <div className="flex items-center">
                                     <MapPin className="w-5 h-5 mr-4" />
-                                    <span>132 Dartmouth Street Boston, Massachusetts 02156 United States</span>
+                                    <span>Chennai, Tamil Nadu, India</span>
                                 </div>
                             </div>
 
-                            <div className="flex space-x-4 mt-12">
-                                <Twitter className="w-6 h-6 cursor-pointer hover:text-gray-300" />
-                                <Instagram className="w-6 h-6 cursor-pointer hover:text-gray-300" />
-                                <Discord className="w-6 h-6 cursor-pointer hover:text-gray-300" />
-                            </div>
+                            {/*<div className="flex space-x-4 mt-12">*/}
+                            {/*    <Twitter className="w-6 h-6 cursor-pointer hover:text-gray-300" />*/}
+                            {/*    <Instagram className="w-6 h-6 cursor-pointer hover:text-gray-300" />*/}
+                            {/*    <Discord className="w-6 h-6 cursor-pointer hover:text-gray-300" />*/}
+                            {/*</div>*/}
                         </div>
 
                         {/* Decorative circles */}
