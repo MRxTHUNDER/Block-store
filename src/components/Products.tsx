@@ -75,8 +75,10 @@ function Products() {
 
     function CheckOutSave() {
         if (!productId) return;
-        localStorage.setItem("productName", product.name);
-        localStorage.setItem("productPrice", product.price);
+        const nameToSave = product.name || localProduct?.name || "";
+        const priceToSave = product.price || localProduct?.price || "";
+        localStorage.setItem("productName", nameToSave);
+        localStorage.setItem("productPrice", priceToSave);
         localStorage.setItem("quantity", quantity.toString());
         localStorage.setItem("productId", productId);
         navigate("/checkout");

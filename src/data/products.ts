@@ -5,7 +5,7 @@ export const products: Product[] = [
         id: 1,
         name: "Geodnet MobileCM (Triple-band)",
         description: "The GEODNET mission is to gather dense real-time geospatial data from the Earth and her Atmosphere using a new class of roof-mounted Space Weather stations.‍ You will earn GEOD tokens for installing this.‍",
-        price: "69,999",
+        price: "61,999",
         //originalPrice: ,
         discount: 0,
         image: "https://heliumdeploy.com/cdn/shop/files/geodnet.png?v=1716227142&width=990",
@@ -31,7 +31,7 @@ export const products: Product[] = [
         id: 3,
         name: "MGW310 Multi-Platform Station - GEODNET & Wingbits Compatible",
         description: "Track your health metrics, workouts, and notifications with our waterproof, feature-packed smart fitness watch with 7-day battery life.",
-        price: "132,450",
+        price: "1,20,000",
         //originalPrice: 179.99,
         discount: 0,
         image: "https://heliumdeploy.com/cdn/shop/files/3d23d23.webp?v=1728574250&width=1346",
@@ -39,6 +39,18 @@ export const products: Product[] = [
         rating: 4.7,
         inStock: true,
         url: "#/products/2"
+    },
+    {
+        id: 7,
+        name: "Wingbits WB200",
+        description: "The Wingbits WB200 is a high-performance ADS-B tracking station designed to track aircraft and feed flight data to the decentralized Wingbits network. Earn WING tokens for providing coverage.",
+        price: "59,999",
+        discount: 0,
+        image: "https://www.nordiccrypto.io/cdn/shop/files/Wingbits_WB200.webp?v=1742479619",
+        category: "Wingbits",
+        rating: 4.8,
+        inStock: true,
+        url: "#/products/7"
     },
     {
         id: 4,

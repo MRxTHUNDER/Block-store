@@ -23,7 +23,7 @@ function Checkout() {
   const [price, setPrice] = useState<string | undefined>();
   const [quantity, setQuantity] = useState<string | undefined>();
   const [productId, setProductId] = useState<string | undefined>();
-  const [coupan, setCoupan] = useState<string | undefined>("");
+  const [coupon, setCoupon] = useState<string | undefined>("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
@@ -49,7 +49,8 @@ function Checkout() {
   };
 
   const calculateTotal = () => {
-    const subtotal = parseFloat(price || "0") * parseInt(quantity || "0", 10);
+    const cleanPrice = (price || "0").replace(/,/g, "");
+    const subtotal = parseFloat(cleanPrice) * parseInt(quantity || "0", 10);
     return (subtotal - Number(discount)).toFixed(2); // Total after discount
   };
 
@@ -64,12 +65,12 @@ function Checkout() {
       price: price || "0",
       productId: productId || "",
       quantity: quantity || "1",
-      coupan,
+      coupon,
       discount: discount, // Default discount as string
        // Default discount
       deliveryFee: "Free", // Default delivery fee
       subTotal: (
-        parseFloat(price || "0") * parseInt(quantity || "0", 10)
+        parseFloat((price || "0").replace(/,/g, "")) * parseInt(quantity || "0", 10)
       ).toFixed(2), // Subtotal
       total: calculateTotal(), // Total after discount
       firstName: formData.firstName,
@@ -254,12 +255,12 @@ function Checkout() {
             <div className="flex justify-between items-center mb-6">
               <span className="text-gray-300">Coupon Code</span>
               <input
-                placeholder="Enter your coupan here"
-                id="coupan"
+                placeholder="Enter your coupon here"
+                id="coupon"
                 className="p-2 bg-white text-black"
-                name="coupan"
+                name="coupon"
                 onChange={(e) => {
-                  setCoupan(e.target.value);
+                  setCoupon(e.target.value);
                   if(e.target.value==='FIRSTORDER'){
                     setDiscount('100')
                   } else {
@@ -272,7 +273,7 @@ function Checkout() {
             <div className="space-y-3 mb-6">
               <div className="flex justify-between text-gray-300">
                 <span>Subtotal</span>
-                <span>Rs. {parseFloat(price || "0") * parseInt(quantity || "0", 10)}</span>
+                <span>Rs. {parseFloat((price || "0").replace(/,/g, "")) * parseInt(quantity || "0", 10)}</span>
               </div>
               {
                 discount !== '0'?

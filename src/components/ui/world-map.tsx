@@ -18,7 +18,8 @@ export function WorldMap({
                            lineColor = "#0ea5e9",
                          }: MapProps) {
   const svgRef = useRef<SVGSVGElement>(null);
-  const map = new DottedMap({ height: 100, grid: "diagonal" });
+  const DottedMapConstructor = (DottedMap as any).default || DottedMap;
+  const map = new DottedMapConstructor({ height: 100, grid: "diagonal" });
 
   const { theme } = useContext(ThemeContext);
 

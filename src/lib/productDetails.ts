@@ -1,7 +1,7 @@
 export const productDetails = {
     "1": {
       "name": "Geodnet MobileCM (Triple-band)",
-      "price": "69,999",
+      "price": "61,999",
       "whatItDoes": "The GEODNET mission is to gather dense real-time geospatial data from the Earth and her Atmosphere using a new class of roof-mounted Space Weather stations.‍ You will earn GEOD tokens for installing this.‍",
       "includedAndRecommended": [
         "MobileCM Triple-Band 4 Constellation GNSS Receiver",
@@ -257,7 +257,41 @@ export const productDetails = {
 
 
     ],
+  },
+  "7": {
+    "name": "Wingbits WB200",
+    "price": "59,999",
+    "whatItDoes": "The Wingbits WB200 is a high-performance ADS-B tracking station designed to track aircraft and feed flight data to the decentralized Wingbits network. Earn WING tokens for providing coverage.",
+    "includedAndRecommended": [
+      "Wingbits WB200 ADS-B Receiver",
+      "Outdoor ADS-B Antenna",
+      "High-quality Antenna Cable",
+      "PoE Splitter & Power Supply",
+      "Mounting Accessories"
+    ],
+    "howMuchCanYouEarn": "Wingbits rewards nodes that provide high-uptime, accurate flight tracking data. Your earning potential is based on the volume and quality of aircraft messages received. A higher antenna placement with a clear 360-degree view of the sky maximizes the number of tracked flights and yields the highest token rewards.",
+    "installationProcess": [
+      "Mount the ADS-B antenna outdoors in the highest possible position with a clear line of sight.",
+      "Run the antenna cable from the antenna to the Wingbits WB200 receiver.",
+      "Connect the receiver to your local network via Ethernet or WiFi.",
+      "Power on the device using the provided PoE injector or power supply and complete configuration via the dashboard."
+    ],
+    "earnImage": "https://heliumdeploy.com/cdn/shop/files/Group_3466.png?v=1721838785&width=1070",
+    "images": [
+      "https://www.nordiccrypto.io/cdn/shop/files/Wingbits_WB200.webp?v=1742479619"
+    ],
+    "reviews": [
+      {
+        "name": "Arjun",
+        "rating": 5,
+        "review": "The WB200 is amazing! Built solid and tracked aircraft within minutes of boot up. Earning rate is steady."
+      },
+      {
+        "name": "Nikhil",
+        "rating": 5,
+        "review": "Great ADS-B miner. Very easy setup compared to DIY solutions. Highly recommended!"
+      }
+    ]
   }
-
-  }
+}
   
